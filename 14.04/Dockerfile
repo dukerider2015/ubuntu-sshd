@@ -5,6 +5,8 @@ RUN apt-get update
 
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
+RUN mkdir /root/.ssh
+RUN cp -f /tmp/sshd/ssh_rsa/authorized_keys /root/.ssh/
 
 RUN echo 'root:test2k1^' |chpasswd
 
