@@ -8,7 +8,7 @@ RUN mkdir /var/run/sshd
 RUN mkdir /root/.ssh
 RUN cp -f /tmp/sshd/ssh_rsa/authorized_keys /root/.ssh/
 
-RUN echo 'root:test2k1^' |chpasswd
+RUN echo 'root:root' |chpasswd
 
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
