@@ -1,13 +1,11 @@
 FROM       ubuntu:14.04
-MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
+MAINTAINER Felix Fu
 
-VOLUME /tmp/sshd
-RUN apt-get update
-
-RUN apt-get install -y openssh-server
+RUN apt-get update && apt-get install -y openssh-server curl git 
 RUN mkdir /var/run/sshd
 RUN mkdir /root/.ssh
-#RUN cp -f /tmp/sshd/ssh_rsa/authorized_keys /root/.ssh/
+RUN git clone https://github.com/dukerider2015/ubuntu-sshd.git /ubuntu-sshd
+RUN cp -f /ubuntu-sshd/14.04/authorized_keys /root/.ssh/
 
 RUN echo 'root:root' |chpasswd
 
