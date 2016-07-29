@@ -1,6 +1,7 @@
 FROM       ubuntu:14.04
 MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
+VOLUME /tmp/sshd
 RUN apt-get update
 
 RUN apt-get install -y openssh-server
