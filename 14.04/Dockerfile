@@ -14,7 +14,7 @@ RUN sed -i '$a GatewayPorts yes' /etc/ssh/sshd_config
 
 RUN git clone https://github.com/meyerd/n2n.git /n2n \
     && cd /n2n/n2n_v1 \
-    && make install \
+    && make install 
 
 EXPOSE 28080
 
